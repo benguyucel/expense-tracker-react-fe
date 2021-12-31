@@ -33,7 +33,6 @@ const SignUp = () => {
       showError((error as any).response.data.errorMessage);
     }
   };
-asd
   return (
     <Form
       {...layout}
