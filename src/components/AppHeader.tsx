@@ -36,6 +36,7 @@ export default function AppHeader() {
           ) : loading ? null: (
             <Menu.Item key="giris">
               <Link to="/login">Giriş</Link>
+              <Link to="/register">Kayıt ol</Link>
             </Menu.Item>
           ) }
         </Menu>
