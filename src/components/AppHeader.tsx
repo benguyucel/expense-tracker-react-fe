@@ -8,7 +8,7 @@ const { Header } = Layout;
 
 export default function AppHeader() {
   const { data, loading, error } = useSelector((state: AppState) => state.user);
-  const  {pathname} = useLocation()
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(isLoggedIn());
@@ -17,7 +17,7 @@ export default function AppHeader() {
     <>
       <Header>
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["home"] }>
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["home"]}>
           <Menu.Item key="home">
             <Link to="/">Home</Link>
           </Menu.Item>
@@ -33,12 +33,16 @@ export default function AppHeader() {
                 <Link to="/logout">Çıkış</Link>
               </Menu.Item>
             </React.Fragment>
-          ) : loading ? null: (
-            <Menu.Item key="giris">
-              <Link to="/login">Giriş</Link>
-              <Link to="/register">Kayıt ol</Link>
-            </Menu.Item>
-          ) }
+          ) : loading ? null : (
+            <React.Fragment>
+              <Menu.Item key="giris">
+                <Link to="/login">Giriş</Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/register">Kayıt ol</Link>
+              </Menu.Item>
+            </React.Fragment>
+          )}
         </Menu>
       </Header>
     </>
